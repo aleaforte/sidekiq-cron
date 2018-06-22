@@ -10,7 +10,7 @@ require 'sidekiq/cron/poller'
 # we are creating new cron poller instance and
 # adding start and stop commands to launcher
 
-if ENV['SIDEKIQ_CRON_ENABLED'].to_s.in?(['false', '0'])
+if !ENV['SIDEKIQ_CRON_ENABLED'].to_s.in?(['false', '0'])
 
   module Sidekiq
     class Launcher
